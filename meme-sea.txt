@@ -92,7 +92,7 @@ SubmitBtn.MouseButton1Click:Connect(function()
         local TBtn = Instance.new("ImageButton", LGui) local UC = Instance.new("UICorner", TBtn)
         TBtn.Size = UDim2.fromOffset(60, 60) TBtn.Position = UDim2.new(0.1, 0, 0.1, 0) TBtn.BackgroundColor3 = Color3.fromRGB(15, 15, 15) TBtn.Image = "rbxassetid://108183942057904" TBtn.Draggable = true UC.CornerRadius = UDim.new(0, 15) TBtn.MouseButton1Click:Connect(function() Window:Toggle() end)
         
-        -- KHỞI TẠO CÁC BIẾN (Thêm biến chọn Boss cụ thể)
+        -- KHỞI TẠO CÁC BIẾN
         local _G = _G or { AutoFarm = false, FarmDistance = 8, AutoAura = false, AutoAttack = false, BringMobs = false, AntiAFK = false, AutoRoll = false, AutoStats = false, StatSelect = "Melee", EspFruit = false, EspPlayer = false, AutoCollectFruit = false, AutoStoreFruit = false, AutoQuestLevel = false, AutoEvilQuest = false, WeaponSelect = "Combat", AttackSpeed = 0.1, AutoRaid = false, AutoBoss = false, AutoSelectBoss = false, SelectedBossName = "Meme Beast", AutoAwaken = false }
         local MemeSeaCodes = {"MemeSeaRelease", "Sub2Xou", "ThankFor1KActive", "ThankFor2MVisits", "ThankFor3MVisits", "ThankFor4MVisits", "ThankFor20KActive", "ThankFor10KLikes"}
         local function TeleportTo(cframe) pcall(function() local character = game.Players.LocalPlayer.Character if character and character:FindFirstChild("HumanoidRootPart") then character.HumanoidRootPart.Velocity = Vector3.new(0,0,0) character.HumanoidRootPart.CFrame = cframe end end) end
@@ -105,7 +105,6 @@ SubmitBtn.MouseButton1Click:Connect(function()
         
         local BossSection = Tabs.Advanced:AddSection("Săn Boss Tùy Chọn")
         
-        -- Nâng cấp: Cho phép chọn chính xác con Boss muốn diệt
         Tabs.Advanced:AddDropdown("SelectedBossName", {
             Title = "Chọn Boss Muốn Săn",
             Values = {"Meme Beast", "Walter", "Lord Sus", "Crying Shark", "Floppa Lava", "Carrot King", "Sogga Boss", "Cheems Boss"},
