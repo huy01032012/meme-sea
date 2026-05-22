@@ -1,0 +1,205 @@
+-- [[ MEME SEA SUPER HUB + PRIVATE KEY SYSTEM - ĐỘC QUYỀN BỞI QUỐC HUY ]]
+
+-- CẤU HÌNH MÃ KHÓA VĨNH VIỄN (Chỉ bạn và người yêu biết)
+local CorrectKey = "Hoàng Anh Cute"
+
+-- 1. KHỞI TẠO KHUNG GIAO DIỆN KEY CHUẨN (ĐÃ BỎ NÚT GETKEY)
+local KeyGui = Instance.new("ScreenGui", game.CoreGui)
+KeyGui.Name = "HuyHubKeySystem"
+
+local MainFrame = Instance.new("Frame", KeyGui)
+MainFrame.BackgroundColor3 = Color3.fromRGB(15, 12, 12)
+MainFrame.Position = UDim2.new(0.5, -250, 0.5, -110)
+MainFrame.Size = UDim2.fromOffset(500, 220)
+MainFrame.Active = true
+MainFrame.Draggable = true
+local FrameCorner = Instance.new("UICorner", MainFrame)
+FrameCorner.CornerRadius = UDim.new(0, 10)
+
+-- TIÊU ĐỀ TRÊN CÙNG
+local Title = Instance.new("TextLabel", MainFrame)
+Title.BackgroundTransparency = 1
+Title.Position = UDim2.new(0, 0, 0, 10)
+Title.Size = UDim2.new(1, 0, 0, 25)
+Title.Font = Enum.Font.GothamBold
+Title.Text = "Quoc Huy Hub Key System" 
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 16
+
+-- Thanh gạch ngang dưới tiêu đề
+local Line = Instance.new("Frame", MainFrame)
+Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line.Position = UDim2.new(0, 20, 0, 40)
+Line.Size = UDim2.new(1, -40, 0, 2)
+Line.BorderSizePixel = 0
+
+-- KHUNG HÌNH ẢNH NGƯỜI YÊU CỦA BẠN
+local UserLogo = Instance.new("ImageLabel", MainFrame)
+UserLogo.BackgroundTransparency = 1
+UserLogo.Position = UDim2.new(0, 30, 0, 75)
+UserLogo.Size = UDim2.fromOffset(90, 90)
+UserLogo.Image = "rbxassetid://108183942057904"
+local LogoCorner = Instance.new("UICorner", UserLogo)
+LogoCorner.CornerRadius = UDim.new(0, 15)
+
+-- Ô NHẬP KEY LỚN Ở GIỮA
+local KeyInput = Instance.new("TextBox", MainFrame)
+KeyInput.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+KeyInput.Position = UDim2.new(0, 150, 0, 60)
+KeyInput.Size = UDim2.fromOffset(320, 90) 
+KeyInput.Font = Enum.Font.Gotham
+KeyInput.PlaceholderText = "Please enter key" 
+KeyInput.PlaceholderColor3 = Color3.fromRGB(180, 180, 180)
+KeyInput.Text = ""
+KeyInput.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyInput.TextSize = 18
+local InputBorder = Instance.new("UIStroke", KeyInput)
+InputBorder.Color = Color3.fromRGB(45, 45, 45)
+InputBorder.Width = 1
+local InputCorner = Instance.new("UICorner", KeyInput)
+InputCorner.CornerRadius = UDim.new(0, 8)
+
+-- NÚT BẤM XÁC NHẬN (Submit)
+local SubmitBtn = Instance.new("TextButton", MainFrame)
+SubmitBtn.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+SubmitBtn.Position = UDim2.new(0, 245, 0, 165)
+SubmitBtn.Size = UDim2.fromOffset(130, 40)
+SubmitBtn.Font = Enum.Font.GothamBold
+SubmitBtn.Text = "Submit" 
+SubmitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+SubmitBtn.TextSize = 14
+local SmCorner = Instance.new("UICorner", SubmitBtn)
+SmCorner.CornerRadius = UDim.new(0, 8)
+
+SubmitBtn.MouseButton1Click:Connect(function()
+    if KeyInput.Text == CorrectKey then
+        KeyGui:Destroy() 
+        
+        -- KÍCH HOẠT HỆ THỐNG MAIN HUB CHỮ HỒNG + LOGO ẢNH NGƯỜI YÊU
+        local Fluent = loadstring(game:HttpGet("https://github.com"))()
+        Fluent.Themes["Dark"] = { Text = Color3.fromRGB(255, 105, 180), TextColor = Color3.fromRGB(255, 182, 193), FontColor = Color3.fromRGB(255, 105, 180), MainTab = Color3.fromRGB(255, 105, 180), Background = Color3.fromRGB(15, 15, 15), DarkBackground = Color3.fromRGB(10, 10, 10), LightBackground = Color3.fromRGB(20, 20, 20), Accent = Color3.fromRGB(255, 20, 147) }
+        local Window = Fluent:CreateWindow({ Title = "Scripter : Quoc Huy", SubTitle = "Meme Sea Super Hub", TabWidth = 160, Size = UDim2.fromOffset(580, 460), Acrylic = false, Theme = "Dark", MinimizeKey = Enum.KeyCode.LeftControl })
+        
+        local FluentGui = game.CoreGui:FindFirstChild("Fluent") or game.CoreGui:FindFirstChild("ScreenGui")
+        local MFrame = FluentGui and (FluentGui:FindFirstChild("Main") or FluentGui:FindFirstChildOfClass("Frame"))
+        if MFrame then
+            local CC = Instance.new("Frame", MFrame) CC.BackgroundTransparency = 1 CC.Position = UDim2.new(1, -75, 0, 10) CC.Size = UDim2.fromOffset(70, 25)
+            local MB = Instance.new("TextButton", CC) MB.BackgroundTransparency = 1 MB.Size = UDim2.fromOffset(25, 25) MB.Font = Enum.Font.GothamBold MB.Text = "—" MB.TextColor3 = Color3.fromRGB(255, 105, 180) MB.TextSize = 14 MB.MouseButton1Click:Connect(function() Window:Toggle() end)
+            local CB = Instance.new("TextButton", CC) CB.BackgroundTransparency = 1 CB.Position = UDim2.new(0, 35, 0, 0) CB.Size = UDim2.fromOffset(25, 25) CB.Font = Enum.Font.GothamBold CB.Text = "X" CB.TextColor3 = Color3.fromRGB(255, 105, 180) CB.TextSize = 14
+            CB.MouseButton1Click:Connect(function() _G.AutoFarm = false; _G.AutoStats = false; _G.AutoRoll = false; _G.AutoCollectFruit = false; _G.AutoStoreFruit = false; _G.EspFruit = false; _G.EspPlayer = false; _G.AutoQuestLevel = false; _G.AutoRaid = false; _G.AutoBoss = false; _G.AutoSelectBoss = false; _G.AutoAwaken = false; if FluentGui then FluentGui:Destroy() end if game.CoreGui:FindFirstChild("CustomRedzLogoGui") then game.CoreGui.CustomRedzLogoGui:Destroy() end end)
+        end
+        local LGui = Instance.new("ScreenGui", game.CoreGui) LGui.Name = "CustomRedzLogoGui"
+        local TBtn = Instance.new("ImageButton", LGui) local UC = Instance.new("UICorner", TBtn)
+        TBtn.Size = UDim2.fromOffset(60, 60) TBtn.Position = UDim2.new(0.1, 0, 0.1, 0) TBtn.BackgroundColor3 = Color3.fromRGB(15, 15, 15) TBtn.Image = "rbxassetid://108183942057904" TBtn.Draggable = true UC.CornerRadius = UDim.new(0, 15) TBtn.MouseButton1Click:Connect(function() Window:Toggle() end)
+        
+        -- KHỞI TẠO CÁC BIẾN (Thêm biến chọn Boss cụ thể)
+        local _G = _G or { AutoFarm = false, FarmDistance = 8, AutoAura = false, AutoAttack = false, BringMobs = false, AntiAFK = false, AutoRoll = false, AutoStats = false, StatSelect = "Melee", EspFruit = false, EspPlayer = false, AutoCollectFruit = false, AutoStoreFruit = false, AutoQuestLevel = false, AutoEvilQuest = false, WeaponSelect = "Combat", AttackSpeed = 0.1, AutoRaid = false, AutoBoss = false, AutoSelectBoss = false, SelectedBossName = "Meme Beast", AutoAwaken = false }
+        local MemeSeaCodes = {"MemeSeaRelease", "Sub2Xou", "ThankFor1KActive", "ThankFor2MVisits", "ThankFor3MVisits", "ThankFor4MVisits", "ThankFor20KActive", "ThankFor10KLikes"}
+        local function TeleportTo(cframe) pcall(function() local character = game.Players.LocalPlayer.Character if character and character:FindFirstChild("HumanoidRootPart") then character.HumanoidRootPart.Velocity = Vector3.new(0,0,0) character.HumanoidRootPart.CFrame = cframe end end) end
+        
+        local Tabs = { Farm = Window:AddTab({ Title = "Farm", Icon = "home" }), AllQuest = Window:AddTab({ Title = "All Quest", Icon = "clipboard" }), Advanced = Window:AddTab({ Title = "Advanced/Raid", Icon = "zap" }), Powers = Window:AddTab({ Title = "Powers", Icon = "apple" }), Stats = Window:AddTab({ Title = "Stats", Icon = "bar-chart" }), Teleport = Window:AddTab({ Title = "Teleport", Icon = "map" }), Visuals = Window:AddTab({ Title = "Visuals/ESP", Icon = "eye" }), Misc = Window:AddTab({ Title = "Misc/Codes", Icon = "settings" }) }
+        
+        -- ================= TAB ADVANCED / NÂNG CẤP MENU CHỌN BOSS =================
+        local RaidSection = Tabs.Advanced:AddSection("Hệ Thống Phụ Bản (Raid)")
+        Tabs.Advanced:AddToggle("AutoRaid", { Title = "Auto Raid Cày Gems", Default = false, Callback = function(v) _G.AutoRaid = v end })
+        
+        local BossSection = Tabs.Advanced:AddSection("Săn Boss Tùy Chọn")
+        
+        -- Nâng cấp: Cho phép chọn chính xác con Boss muốn diệt
+        Tabs.Advanced:AddDropdown("SelectedBossName", {
+            Title = "Chọn Boss Muốn Săn",
+            Values = {"Meme Beast", "Walter", "Lord Sus", "Crying Shark", "Floppa Lava", "Carrot King", "Sogga Boss", "Cheems Boss"},
+            CurrentValue = "Meme Beast",
+            Callback = function(Value) _G.SelectedBossName = Value end
+        })
+        
+        Tabs.Advanced:AddToggle("Value", {
+            Title = "Auto Farm Con Boss Đã Chọn",
+            Description = "Chỉ dịch chuyển và tiêu diệt duy nhất con Boss bạn chọn ở trên",
+            Default = false, Callback = function(v) _G.AutoSelectBoss = v end
+        })
+
+        Tabs.Advanced:AddToggle("AutoBoss", { Title = "Auto Săn Tất Cả Boss (Quét Quái Tự Động)", Default = false, Callback = function(v) _G.AutoBoss = v end })
+        
+        local AwakenSection = Tabs.Advanced:AddSection("Thức Tỉnh Trái Ác Quỷ")
+        Tabs.Advanced:AddToggle("AutoAwaken", { Title = "Auto Awaken Powers", Default = false, Callback = function(v) _G.AutoAwaken = v end })
+        local ServerSection = Tabs.Advanced:AddSection("Hệ Thống Máy Chủ")
+        Tabs.Advanced:AddButton({ Title = "Server Hop (Chuyển Máy Chủ)", Callback = function() local HttpService = game:GetService("HttpService") local TeleportService = game:GetService("TeleportService") pcall(function() local servers = HttpService:JSONDecode(game:HttpGet("https://roblox.com" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")) for _, server in pairs(servers.data) do if server.playing < server.maxPlayers and server.id ~= game.JobId then TeleportService:TeleportToPlaceInstance(game.PlaceId, server.id, game.Players.LocalPlayer) break end end end) end })
+
+        -- CÁC CHỨC NĂNG KHÁC GIỮ NGUYÊN VẸN
+        Tabs.Farm:AddDropdown("WeaponSelect", { Title = "Chọn Loại Vũ Khí", Values = {"Combat", "Sword"}, CurrentValue = "Combat", Callback = function(v) _G.WeaponSelect = v end })
+        Tabs.Farm:AddSlider("AttackSpeed", { Title = "Tốc Độ Đánh (Delay)", Default = 0.1, Min = 0.01, Max = 0.5, Rounding = 2, Callback = function(v) _G.AttackSpeed = v end })
+        Tabs.Farm:AddToggle("AutoFarm", { Title = "Bật Auto Farm Level", Default = false, Callback = function(v) _G.AutoFarm = v end })
+        Tabs.AllQuest:AddToggle("AutoQuestLevel", { Title = "Auto Nhận & Làm Nhiệm Vụ Cấp Độ", Default = false, Callback = function(v) _G.AutoQuestLevel = v end })
+        Tabs.AllQuest:AddToggle("AutoEvilQuest", { Title = "Auto Nhiệm Vụ Evil Linh Hồn", Default = false, Callback = function(v) _G.AutoEvilQuest = v end })
+        Tabs.Misc:AddSlider("FarmDistance", { Title = "Farm Distance", Default = 8, Min = 4, Max = 15, Rounding = 0, Callback = function(v) _G.FarmDistance = v end })
+        Tabs.Misc:AddToggle("AutoAura", { Title = "Auto Aura", Default = false, Callback = function(v) _G.AutoAura = v end })
+        Tabs.Misc:AddToggle("AutoAttack", { Title = "Auto Attack", Default = false, Callback = function(v) _G.AutoAttack = v end })
+        Tabs.Misc:AddToggle("BringMobs", { Title = "Bring Mobs", Default = false, Callback = function(v) _G.BringMobs = v end })
+        Tabs.Misc:AddToggle("AntiAFK", { Title = "Anti AFK", Default = false, Callback = function(v) _G.AntiAFK = v end })
+        Tabs.Powers:AddToggle("AutoRoll", { Title = "Auto Roll Meme Power", Default = false, Callback = function(v) _G.AutoRoll = v end })
+        Tabs.Powers:AddToggle("AutoCollectFruit", { Title = "Auto Nhặt Trái Ác Quỷ", Default = false, Callback = function(v) _G.AutoCollectFruit = v end })
+        Tabs.Powers:AddToggle("AutoStoreFruit", { Title = "Auto Lưu Trữ Trái (Store)", Default = false, Callback = function(v) _G.AutoStoreFruit = v end })
+        Tabs.Stats:AddDropdown("StatSelect", { Title = "Chọn chỉ số", Values = {"Melee", "Defense", "Sword", "Meme Power"}, CurrentValue = "Melee", Callback = function(v) _G.StatSelect = v end })
+        Tabs.Stats:AddToggle("AutoStats", { Title = "Auto Tăng Điểm", Default = false, Callback = function(v) _G.AutoStats = v end })
+        Tabs.Visuals:AddToggle("EspFruit", { Title = "ESP Trái Ác Quỷ", Default = false, Callback = function(v) _G.EspFruit = v end })
+        Tabs.Visuals:AddToggle("EspPlayer", { Title = "ESP Người Chơi", Default = false, Callback = function(v) _G.EspPlayer = v end })
+        Tabs.Misc:AddButton({ Title = "Auto Redeem All Codes", Callback = function() for _, c in pairs(MemeSeaCodes) do pcall(function() game:GetService("ReplicatedStorage").Remotes.RedeemCode:FireServer(c) end) task.wait(0.2) end end })
+        local IslandPositions = { ["Floppa Island"] = CFrame.new(-1443, 22, -18), ["Gorilla Island"] = CFrame.new(-2415, 23, -642), ["Pop Cat Island"] = CFrame.new(-3383, 24, 219), ["Cheems Island"] = CFrame.new(165, 23, -1124), ["Snow Island"] = CFrame.new(1015, 25, 1145), ["Meme Island (Sea 2)"] = CFrame.new(3520, 30, -2500) }
+        for name, cf in pairs(IslandPositions) do Tabs.Teleport:AddButton({ Title = "Đến: " .. name, Callback = function() TeleportTo(cf) end }) end
+
+        -- VÒNG LẶP QUÉT VÀ THỰC THI LOGIC DIỆT BOSS CHỈ ĐỊNH
+        task.spawn(function()
+            while true do
+                task.wait(_G.AttackSpeed)
+                pcall(function()
+                    local player = game.Players.LocalPlayer local targetMonster = nil
+                    
+                    -- Xử lý Ưu tiên 1: Săn con Boss cụ thể được chọn trong Menu thả xuống
+                    if _G.AutoSelectBoss then
+                        for _, monster in pairs(workspace.Monsters:GetChildren()) do
+                            if monster:FindFirstChild("HumanoidRootPart") and monster.Humanoid.Health > 0 and monster.Name == _G.SelectedBossName then
+                                targetMonster = monster
+                                break
+                            end
+                        end
+                    end
+                    
+                    -- Xử lý Ưu tiên 2: Các chế độ Auto Boss thường, Auto Raid, Auto FarmLevel cũ
+                    if not targetMonster and _G.AutoBoss then for _, monster in pairs(workspace.Monsters:GetChildren()) do if monster:FindFirstChild("HumanoidRootPart") and monster.Humanoid.Health > 0 and (monster.Name:find("Boss") or monster.Name:find("Beast") or monster.Name == "Meme Beast") then targetMonster = monster break end end end
+                    if _G.AutoRaid and not targetMonster then if player.Character.HumanoidRootPart.Position.Y < -500 then game:GetService("ReplicatedStorage").Remotes.StartRaid:FireServer() end for _, monster in pairs(workspace.Monsters:GetChildren()) do if monster:FindFirstChild("HumanoidRootPart") and monster.Humanoid.Health > 0 then targetMonster = monster break end end end
+                    if (_G.AutoFarm or _G.AutoQuestLevel or _G.AutoEvilQuest) and not targetMonster then for _, monster in pairs(workspace.Monsters:GetChildren()) do if monster:FindFirstChild("HumanoidRootPart") and monster.Humanoid.Health > 0 then targetMonster = monster break end end end
+                    
+                    -- Tiến hành dịch chuyển và kích hoạt vũ khí chém Boss
+                    if targetMonster then
+                        if _G.BringMobs then targetMonster.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, -_G.FarmDistance) targetMonster.HumanoidRootPart.CanCollide = false else player.Character.HumanoidRootPart.CFrame = targetMonster.HumanoidRootPart.CFrame * CFrame.new(0, _G.FarmDistance, 0) end
+                        if _G.AutoAttack then
+                            local tool = nil
+                            if _G.WeaponSelect == "Combat" then tool = player.Backpack:FindFirstChild("Combat") or player.Character:FindFirstChild("Combat") or player.Backpack:FindFirstChildOfClass("Tool")
+                            elseif _G.WeaponSelect == "Sword" then for _, item in pairs(player.Backpack:GetChildren()) do if item:IsA("Tool") and item.Name ~= "Combat" and not item.Name:find("Fruit") then tool = item break end end if not tool then tool = player.Character:FindFirstChildOfClass("Tool") end end
+                            if tool then player.Character.Humanoid:EquipTool(tool) tool:Activate() end
+                        end
+                    end
+                end)
+            end
+        end)
+        
+        -- Khởi chạy ngầm hệ thống phụ trợ độc lập (ESP, Code, Stats...)
+        task.spawn(function() while task.wait(1) do if _G.AutoAwaken then game:GetService("ReplicatedStorage").Remotes.AwakenPower:FireServer() end end end)
+        local function CreateEsp(obj, text, color) local b = Instance.new("BillboardGui", game.CoreGui) b.AlwaysOnTop = true b.Size = UDim2.new(0, 100, 0, 30) b.Adornee = obj local l = Instance.new("TextLabel", b) l.Size = UDim2.new(1, 0, 1, 0) l.BackgroundTransparency = 1 l.TextColor3 = color l.Text = text l.Font = Enum.Font.GothamBold l.TextSize = 12 return b end
+        task.spawn(function() while task.wait(1) do for _, g in pairs(game.CoreGui:GetChildren()) do if g:IsA("BillboardGui") then g:Destroy() end end for _, o in pairs(workspace:GetChildren()) do if o:IsA("Tool") and (o.Name:find("Fruit") or o.Name:find("Power")) then if _G.EspFruit and o:FindFirstChild("Handle") then CreateEsp(o.Handle, "[Fruit]: " .. o.Name, Color3.fromRGB(255, 0, 255)) end if _G.AutoCollectFruit and o:FindFirstChild("Handle") then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = o.Handle.CFrame end end end if _G.EspPlayer then for _, p in pairs(game.Players:GetPlayers()) do if p ~= game.Players.LocalPlayer and p.Character and p.Character:FindFirstChild("HumanoidRootPart") then CreateEsp(p.Character.HumanoidRootPart, p.Name, Color3.fromRGB(0, 255, 255)) end end end end end)
+        task.spawn(function() while task.wait(1) do if _G.AutoStoreFruit then pcall(function() for _, item in pairs(game.Players.LocalPlayer.Character:GetChildren()) do if item:IsA("Tool") and (item.Name:find("Fruit") or item.Name:find("Power")) then game:GetService("ReplicatedStorage").Remotes.StorePower:FireServer(item.Name) end end end) end end end)
+        task.spawn(function() while task.wait(0.5) do if _G.AutoStats then game:GetService("ReplicatedStorage").Remotes.StatsPoints:FireServer(_G.StatSelect, 1) end end end)
+        task.spawn(function() while task.wait(1) do if _G.AutoRoll then game:GetService("ReplicatedStorage").Remotes.RollPower:FireServer() end end end)
+        game:GetService("Players").LocalPlayer.Idled:Connect(function() if _G.AntiAFK then game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame) task.wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame) end end)
+        task.spawn(function() while task.wait(1) do if _G.AutoQuestLevel then pcall(function() local p = game.Players.LocalPlayer local l = p.Data.Level.Value if p.PlayerGui.MainGui.QuestFrame.Visible == false then if l >= 1 and l < 50 then game:GetService("ReplicatedStorage").Remotes.AcceptQuest:FireServer("FloppaQuest1") elseif l >= 50 and l < 100 then game:GetService("ReplicatedStorage").Remotes.AcceptQuest:FireServer("DogsterQuest1") end end end) end end end)
+
+        Fluent:Notify({ Title = "Scripter : Quoc Huy", Content = "Mở khóa thành công Super Hub Tối Thượng!", Duration = 5 })
+    else
+        SubmitBtn.Text = "WRONG KEY!"
+        SubmitBtn.TextColor3 = Color3.fromRGB(255, 0, 0)
+        task.wait(1.5)
+        SubmitBtn.Text = "Submit"
+        SubmitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    end
+end)
